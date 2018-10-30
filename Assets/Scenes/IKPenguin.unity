@@ -825,19 +825,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1903156630504624, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789270519147662, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114771283387414928, guid: fb031aa988ce7744186fde49dd359af2,
-        type: 2}
-      propertyPath: zOffset
-      value: -7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
   m_IsPrefabAsset: 0
@@ -2794,7 +2781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 248bf64aa8feec046b89bb312462f6ad, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 248bf64aa8feec046b89bb312462f6ad, type: 3}
       propertyPath: m_CastShadows

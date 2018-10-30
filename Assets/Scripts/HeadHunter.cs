@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class HeadHunter : MonoBehaviour
 {
-    public GameObject[] heads, handsL, handsR;
+    public GameObject[] heads, handsL, handsR, legsL, legsR;
 
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
         heads = GameObject.FindGameObjectsWithTag("Head");
         handsL = GameObject.FindGameObjectsWithTag("HandRight");
         handsR = GameObject.FindGameObjectsWithTag("HandLeft");
+
+        legsL = GameObject.FindGameObjectsWithTag("FootRight");
+        legsR = GameObject.FindGameObjectsWithTag("FootLeft");
+
     }
 
     public Vector3[] GetPositions()

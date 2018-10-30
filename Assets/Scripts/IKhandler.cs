@@ -8,8 +8,7 @@ public class IKhandler : MonoBehaviour
 
     public float ikWeight = 1;
 
-    public Transform leftIKTarget;
-    public Transform rightIKTarget;
+    public Transform leftArmIKTarget, rightArmIKTarget, leftLegIKTarget, rightLegIKTarget;
 
     // Use this for initialization
     void Start () {
@@ -23,12 +22,21 @@ public class IKhandler : MonoBehaviour
 		
 	}
 
-    private void OnAnimatorIK()
-    {
+    private void OnAnimatorIK() {
+        // Arm weights
         anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, ikWeight);
         anim.SetIKPositionWeight(AvatarIKGoal.RightHand, ikWeight);
 
-        anim.SetIKPosition(AvatarIKGoal.LeftHand, leftIKTarget.position);
-        anim.SetIKPosition(AvatarIKGoal.RightHand, rightIKTarget.position);
+        // Leg weights
+        anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight);
+        anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight);
+
+        // Arm goals
+        anim.SetIKPosition(AvatarIKGoal.LeftHand, leftArmIKTarget.position);
+        anim.SetIKPosition(AvatarIKGoal.RightHand, rightArmIKTarget.position);
+
+        // Leg goals
+        anim.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegIKTarget.position);
+        anim.SetIKPosition(AvatarIKGoal.RightFoot, rightLegIKTarget.position);
     }
 }
