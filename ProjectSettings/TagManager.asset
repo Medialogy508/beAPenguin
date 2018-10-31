@@ -12,6 +12,7 @@ TagManager:
   - FootRight
   - FootLeft
   - BodyPartManager
+  - Penguin
   layers:
   - Default
   - TransparentFX
