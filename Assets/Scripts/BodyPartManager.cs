@@ -53,7 +53,7 @@ public class BodyPartManager : MonoBehaviour {
 
         foreach(ulong trackingId in transformIds) {
 			if(transformIds.Contains(id)) {
-				print("yay");
+				print("yay " + id);
 			}
 			//print(tempTransforms[trackingId].GetComponent<BodyContainer>().trackingId);
 		}
