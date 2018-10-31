@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,21 +48,33 @@ public class BodyPartManager : MonoBehaviour {
 	}
 
 	public Transform GetPart(string jointName, ulong id) {
+		//The body transforms
 		Dictionary<ulong, Transform> tempTransforms = bodyView.GetTransforms();
 
+		// Transform dictionary keys
 		List<ulong> transformIds = new List<ulong>(tempTransforms.Keys);
 
+		//Returning the part from the dictionary
         foreach(ulong trackingId in transformIds) {
 			if(transformIds.Contains(id)) {
-				print("yay " + id);
+				try {
+					return tempTransforms[id].GetComponent<BodyContainer>().parts[jointName];
+				} catch(KeyNotFoundException) {
+					print("Can't find key, did you spell that shit correct?");
+				}
+				
 			}
-			//print(tempTransforms[trackingId].GetComponent<BodyContainer>().trackingId);
 		}
 		return null;
 	}
 
 	public float GetHeadHeight(ulong id) {
-		return GetPart("Head", id).position.y;
+		try {
+			return GetPart("head", id).position.y;
+		} catch (NullReferenceException e) {
+			Debug.LogError(e.Message);
+			return 0;
+		}
 	}
 
 	public float GetChildHeight() {

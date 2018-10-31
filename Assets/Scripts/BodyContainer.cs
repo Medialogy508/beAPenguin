@@ -7,15 +7,16 @@ public class BodyContainer : MonoBehaviour {
 	public ulong trackingId;
 	public BodyPart handLeft, handRight, head, footLeft, footRight;
 
-	private Dictionary<ulong, Transform> parts = new Dictionary<ulong, Transform>();
+	public Dictionary<string, Transform> parts = new Dictionary<string, Transform>();
 	//public List<BodyPart> parts = new List<BodyPart>();
 
+	// Putting the parts into the dictionary
 	private void Start() {
-		//parts.Add(handLeft);
-		//parts.Add(handRight);
-		//parts.Add(head);
-		//parts.Add(footLeft);
-		//parts.Add(footRight);
+		parts["handLeft"] = handLeft.transform;
+		parts["handRight"] = handRight.transform;
+		parts["head"] = head.transform;
+		parts["footLeft"] = footLeft.transform;
+		parts["footRight"] = footRight.transform;
 	}
 
 }
