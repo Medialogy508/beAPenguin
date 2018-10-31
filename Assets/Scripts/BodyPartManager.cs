@@ -10,12 +10,12 @@ public class BodyPartManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		print(bodyView.GetTransforms());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 

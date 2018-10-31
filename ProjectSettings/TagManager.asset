@@ -11,6 +11,7 @@ TagManager:
   - HandLeft
   - FootRight
   - FootLeft
+  - BodyPartManager
   layers:
   - Default
   - TransparentFX

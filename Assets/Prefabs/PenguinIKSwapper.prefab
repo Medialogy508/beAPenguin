@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4515677637305350}
-  - component: {fileID: 114771283387414928}
+  - component: {fileID: 114445455320908234}
   m_Layer: 0
   m_Name: PenguinIKSwapper
   m_TagString: Untagged
@@ -1782,6 +1782,17 @@ MonoBehaviour:
   rightArmIKTarget: {fileID: 4675522143847326}
   leftLegIKTarget: {fileID: 4010647474180524}
   rightLegIKTarget: {fileID: 4914161470459856}
+--- !u!114 &114445455320908234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094489441764320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfef036f1daad461f9bed9c5a0c27ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114575922901354688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1798,22 +1809,6 @@ MonoBehaviour:
   rightArmIKTarget: {fileID: 4675522143847326}
   leftLegIKTarget: {fileID: 4010647474180524}
   rightLegIKTarget: {fileID: 4914161470459856}
---- !u!114 &114771283387414928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1094489441764320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9692ad7c7f325a4ebf1a0a6641b186d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  child: {fileID: 1903156630504624}
-  parent: {fileID: 1789270519147662}
-  left: {fileID: 4683053320449190}
-  right: {fileID: 4675522143847326}
-  zOffset: -7
 --- !u!137 &137145579092380390
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

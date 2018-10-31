@@ -91,8 +91,7 @@ public class SimpleBodySourceView : MonoBehaviour
         return transforms;
     }
 
-    private GameObject CreateBodyObject(ulong id)
-    {
+    private GameObject CreateBodyObject(ulong id) {
         //Create body parent
         GameObject body = new GameObject("Body:" + id);
         //body.tag = "Target";
@@ -100,8 +99,7 @@ public class SimpleBodySourceView : MonoBehaviour
         int counter = 0;
 
         //Create joints
-        foreach (JointType joint in _joints)
-        {
+        foreach (JointType joint in _joints) {
             //Create object
             GameObject newJoint = Instantiate(mJointObject);
             newJoint.tag = joint.ToString();
@@ -120,12 +118,10 @@ public class SimpleBodySourceView : MonoBehaviour
         return body;
     }
 
-    private void UpdateBodyObject(Body body, GameObject bodyObject)
-    {
+    private void UpdateBodyObject(Body body, GameObject bodyObject) {
         int counter = 0;
         //Update joints
-        foreach(JointType _joint in _joints)
-        {
+        foreach(JointType _joint in _joints) {
             //Get new target position
             Joint sourceJoint = body.Joints[_joint];
             Vector3 targetPosition = GetVector3FromJoint(sourceJoint);
@@ -136,6 +132,7 @@ public class SimpleBodySourceView : MonoBehaviour
             jointObject.position = targetPosition;
 
             positions[counter] = targetPosition;
+            transforms[counter].position = targetPosition;
 
             counter++;
         }
