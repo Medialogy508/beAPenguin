@@ -10,14 +10,12 @@ public class FamilyManager : MonoBehaviour
 
     public float zOffset = -10;
 
-    public void IsChild(bool isChild)
-    {
+    public void IsChild(bool isChild) {
         child.SetActive(isChild);
         parent.SetActive(!isChild);
     }
 
-    public void SetLeftHandPosition(bool booleft, Vector3 pos)
-    {
+    public void SetLeftHandPosition(bool booleft, Vector3 pos) {
         if(booleft)
         {
             left.position = new Vector3(pos.x, pos.y, zOffset);

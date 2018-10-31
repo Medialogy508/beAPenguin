@@ -37,17 +37,18 @@ public class PenguinManager : MonoBehaviour
             Debug.Log(positions.Length);
             for (int i = 0; i < positions.Length; i++)
             {
-                penguins[i].transform.position = new Vector3(xOffset + positions[i].x / divide, yOffset, zOffset);
+                penguins[i].transform.position = new Vector3(xOffset + positions[i].x / divide, yOffset, positions[i].z + zOffset);
 
+                //Check for child height
                 penguins[i].GetComponent<FamilyManager>().IsChild(positions[i].y < childHeight);
 
+                //Set left hand position
                 penguins[i].GetComponent<FamilyManager>().SetLeftHandPosition(true, new Vector3(handsL[i].x, handsL[i].y + yHandOffset - positions[i].y, handsL[i].z));
-                //penguins[i].GetComponent<FamilyManager>().SetLeftHandPosition(true, handsL[i]);
-                //penguins[i].GetComponent<FamilyManager>().SetLeftHandPosition(false, new Vector3(handsR[i].x, handsR[i].z, handsR[i].y));
+
+
+                //Set right hand position
                 penguins[i].GetComponent<FamilyManager>().SetLeftHandPosition(false, new Vector3(handsR[i].x, handsR[i].y + yHandOffset - positions[i].y, handsR[i].z));
 
-                //SET POSITIONS
-                //transform.position = new Vector3(body.GetPosition(0).x / divide + plus, transform.position.y, transform.position.z);
             }
         }
 

@@ -10,6 +10,7 @@ public class SimpleBodySourceView : MonoBehaviour
 {
     public BodySourceManager mBodySourceManager;
     public GameObject mJointObject;
+    public List<Transform> transforms = new List<Transform>();
     public List<Vector3> positions = new List<Vector3>();
 
     //MODIFICATION public Vector3 offset = new Vector3(0, 0, 0);
@@ -21,6 +22,8 @@ public class SimpleBodySourceView : MonoBehaviour
        JointType.HandLeft,
        JointType.HandRight,
        JointType.Head,
+       JointType.FootLeft,
+       JointType.FootRight
     };
 
     private void Update()
@@ -36,8 +39,10 @@ public class SimpleBodySourceView : MonoBehaviour
         {
             if (body == null)
                 continue;
-            if (body.IsTracked)
+            if (body.IsTracked) {
                 trackedIds.Add(body.TrackingId);
+                
+            }
         }
         #endregion
 
@@ -49,7 +54,8 @@ public class SimpleBodySourceView : MonoBehaviour
             {
                 //Destroy body objet
                 Destroy(mBodies[trackingId]);
-
+                
+                transforms.Remove(mBodies[trackingId].transform);
                 //Remove from list
                 mBodies.Remove(trackingId);
             }
@@ -68,8 +74,10 @@ public class SimpleBodySourceView : MonoBehaviour
             if(body.IsTracked)
             {
                 //if body isn't tracked, create body
-                if (!mBodies.ContainsKey(body.TrackingId))
+                if (!mBodies.ContainsKey(body.TrackingId)) {
                     mBodies[body.TrackingId] = CreateBodyObject(body.TrackingId);
+                    transforms.Add(mBodies[body.TrackingId].transform);
+                }
 
                 //Update positions
                 UpdateBodyObject(body, mBodies[body.TrackingId]);
@@ -77,6 +85,10 @@ public class SimpleBodySourceView : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    public List<Transform> GetTransforms() {
+        return transforms;
     }
 
     private GameObject CreateBodyObject(ulong id)
@@ -117,7 +129,7 @@ public class SimpleBodySourceView : MonoBehaviour
             //Get new target position
             Joint sourceJoint = body.Joints[_joint];
             Vector3 targetPosition = GetVector3FromJoint(sourceJoint);
-            targetPosition.z = 0;
+            //targetPosition.z = 0;
 
             //Get joint, set new position
             Transform jointObject = bodyObject.transform.Find(_joint.ToString());
