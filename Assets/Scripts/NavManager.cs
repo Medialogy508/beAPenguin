@@ -27,13 +27,21 @@ public class NavManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(penguin.trackingId != null && moveGoal != null) {
-			agent.destination = goal.position;
-		} else if(moveGoal == null) {
+			moveGoal.transform.position = bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position;
+			agent.destination = moveGoal.transform.position;
+		} else if(penguin.trackingId != null && moveGoal == null) {
 			moveGoal = new GameObject("Move Goal : " + penguin.trackingId);
-		} else if(penguin.trackingId == null) {
+			return;
+		} else if(penguin.trackingId == null && moveGoal != null) {
+			moveGoal.transform.position = new Vector3(-31.2f, -2.380126f, 0);
+			agent.destination = moveGoal.transform.position;
 			Destroy(moveGoal);
 			moveGoal = null;
 		}
+	}
+
+	public void SetBaseOffset(float value) {
+		agent.baseOffset = value;
 	}
 
 	public static Vector3 RandomNavSphere (Vector3 origin, float distance, int layermask) {

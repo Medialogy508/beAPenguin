@@ -8,6 +8,8 @@ using Joint = Windows.Kinect.Joint;
 
 public class SimpleBodySourceView : MonoBehaviour
 {
+
+    public float jointPositionScale = 10;
     public BodySourceManager mBodySourceManager;
     public GameObject mJointObject;
     public List<Vector3> positions = new List<Vector3>();
@@ -23,7 +25,10 @@ public class SimpleBodySourceView : MonoBehaviour
        JointType.HandRight,
        JointType.Head,
        JointType.FootLeft,
-       JointType.FootRight
+       JointType.FootRight,
+       JointType.SpineBase,
+       JointType.ShoulderLeft,
+       JointType.ShoulderRight
     };
 
     private void Update() {
@@ -71,7 +76,6 @@ public class SimpleBodySourceView : MonoBehaviour
                 if (!mBodies.ContainsKey(body.TrackingId)) {
                     mBodies[body.TrackingId] = CreateBodyObject(body.TrackingId);
                     transforms[body.TrackingId] = mBodies[body.TrackingId].transform;
-
                     //Assign new body to a penguin gameobject
                     NewBody(body.TrackingId);
                 }
@@ -125,6 +129,9 @@ public class SimpleBodySourceView : MonoBehaviour
         bodyContainer.head = new BodyPart("head", body.transform.GetChild(2));
         bodyContainer.footLeft = new BodyPart("footRight", body.transform.GetChild(3));
         bodyContainer.footRight = new BodyPart("footRight", body.transform.GetChild(4));
+        bodyContainer.crotch = new BodyPart("spineBase", body.transform.GetChild(5));
+        bodyContainer.shoulderLeft = new BodyPart("shoulderLeft", body.transform.GetChild(6));
+        bodyContainer.shoulderRight = new BodyPart("shoulderRight", body.transform.GetChild(7));
 
         return body;
     }
@@ -155,6 +162,6 @@ public class SimpleBodySourceView : MonoBehaviour
     }
 
     private Vector3 GetVector3FromJoint(Joint joint) {
-        return new Vector3(joint.Position.X * 10, joint.Position.Y * 10, joint.Position.Z * 10);
+        return new Vector3(joint.Position.X * jointPositionScale, (joint.Position.Y * jointPositionScale)+2, (joint.Position.Z * jointPositionScale) -25);
     }
 }

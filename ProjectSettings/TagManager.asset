@@ -13,6 +13,9 @@ TagManager:
   - FootLeft
   - BodyPartManager
   - Penguin
+  - SpineBase
+  - ShoulderLeft
+  - ShoulderRight
   layers:
   - Default
   - TransparentFX

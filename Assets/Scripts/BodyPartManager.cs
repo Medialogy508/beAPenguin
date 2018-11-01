@@ -27,7 +27,8 @@ public class BodyPartManager : MonoBehaviour {
 			if(tempPenguin.trackingId == null) {
 				tempPenguin.trackingId = id;
 				obj.transform.name = "Penguin : " + id;
-				print(obj.transform.name);
+				obj.GetComponent<HeightManager>().Invoke("GetABody", 0.1f);
+				//print(obj.transform.name);
 				return;
 			}
 		}
@@ -41,6 +42,7 @@ public class BodyPartManager : MonoBehaviour {
 			Penguin tempPenguin = obj.GetComponent<Penguin>();
 			if(tempPenguin.trackingId == id) {
 				tempPenguin.trackingId = null;
+				obj.GetComponent<HeightManager>().NullHeight();
 				obj.transform.name = "Penguin : " + "Nobody";
 				return;
 			}
@@ -61,7 +63,7 @@ public class BodyPartManager : MonoBehaviour {
 				try {
 					return tempTransforms[id].GetComponent<BodyContainer>().parts[jointName];
 				} catch(KeyNotFoundException) {
-					print("Can't find key, did you spell that shit correct?");
+					print("Can't find key, did you spell that shit correct? " + jointName);
 				}
 				
 			}

@@ -5,7 +5,9 @@ using UnityEngine;
 public class BodyContainer : MonoBehaviour {
 
 	public ulong trackingId;
-	public BodyPart handLeft, handRight, head, footLeft, footRight;
+	public BodyPart handLeft, handRight, head, footLeft, footRight, crotch, shoulderLeft, shoulderRight;
+
+	public Vector3 leanVector;
 
 	public Dictionary<string, Transform> parts = new Dictionary<string, Transform>();
 	//public List<BodyPart> parts = new List<BodyPart>();
@@ -17,6 +19,9 @@ public class BodyContainer : MonoBehaviour {
 		parts["head"] = head.transform;
 		parts["footLeft"] = footLeft.transform;
 		parts["footRight"] = footRight.transform;
+		parts["spineBase"] = crotch.transform;
+		parts["shoulderLeft"] = shoulderLeft.transform;
+		parts["shoulderRight"] = shoulderRight.transform;
 	}
 
 }
