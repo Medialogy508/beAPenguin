@@ -8,6 +8,10 @@ public class HeightManager : MonoBehaviour {
 
 	BodyPartManager bodyPartManager;
 
+	float height;
+
+	bool? highEnough;
+
 	// Use this for initialization
 	void Start () {
 		penguin = GetComponent<Penguin>();
@@ -17,7 +21,13 @@ public class HeightManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(penguin.trackingId != null) {
-			print(bodyPartManager.GetHeadHeight((ulong) penguin.trackingId));
+			height = bodyPartManager.GetHeadHeight((ulong) penguin.trackingId);
 		}
+
+		if (height > bodyPartManager.GetChildHeight()) {
+				highEnough = true;
+			} else {
+				highEnough = false;
+			}
 	}
 }
