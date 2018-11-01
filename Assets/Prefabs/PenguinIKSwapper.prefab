@@ -142,6 +142,8 @@ GameObject:
   - component: {fileID: 4515677637305350}
   - component: {fileID: 114445455320908234}
   - component: {fileID: 114195108871254368}
+  - component: {fileID: 114980494561551020}
+  - component: {fileID: 195630766206605458}
   m_Layer: 0
   m_Name: PenguinIKSwapper
   m_TagString: Penguin
@@ -927,7 +929,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1883047956277246}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 2.540001, y: 3.99, z: -6.02689}
+  m_LocalPosition: {x: 2.540001, y: 0.12999988, z: 0.12999988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4515677637305350}
@@ -1302,8 +1304,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1789270519147662}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 3.5, z: -6.02689}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: -0.12, z: 0.13}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4823353541922414}
   - {fileID: 4957689057951646}
@@ -1344,7 +1346,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094489441764320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.38, y: -2.06, z: 4.36}
+  m_LocalPosition: {x: -11.38, y: 1.4490001, z: -2.1600003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4683053320449190}
@@ -1434,7 +1436,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758445781023194}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -2.89, y: 6.21, z: -6.02689}
+  m_LocalPosition: {x: -2.89, y: 2.35, z: 0.12999988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4515677637305350}
@@ -1460,7 +1462,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044520500926332}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 2.540001, y: 6.2200003, z: -6.02689}
+  m_LocalPosition: {x: 2.540001, y: 2.3600001, z: 0.12999988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4515677637305350}
@@ -1630,7 +1632,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153865319089416}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4930999042693058}
@@ -1643,7 +1645,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373341400317784}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -2.8900003, y: 3.99, z: -6.02689}
+  m_LocalPosition: {x: -2.8900003, y: 0.12999988, z: 0.12999988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4515677637305350}
@@ -1670,8 +1672,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1903156630504624}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 3.5, z: -6.02689}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0.12999988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4005839857851442}
   - {fileID: 4851569526112084}
@@ -1821,6 +1823,18 @@ MonoBehaviour:
   rightArmIKTarget: {fileID: 4675522143847326}
   leftLegIKTarget: {fileID: 4010647474180524}
   rightLegIKTarget: {fileID: 4914161470459856}
+--- !u!114 &114980494561551020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094489441764320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f39dabe16bd4373ab26864deabddc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: {fileID: 0}
 --- !u!137 &137145579092380390
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1836,7 +1850,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6ad4c85cd8e96354ab82e5546bfbda43, type: 2}
+  - {fileID: 2100000, guid: 254de0915c8ea8c49b08bed1732b78a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1905,7 +1919,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0b930f37607658944adadc4ab448c8ba, type: 2}
+  - {fileID: 2100000, guid: a5a1fc93ca0154546a4be1ecd7a4d7ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1959,3 +1973,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00018668175, y: 1.6266904, z: 0.05075836}
     m_Extent: {x: 2.8247912, y: 2.5560641, z: 1.2602406}
   m_DirtyAABB: 0
+--- !u!195 &195630766206605458
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094489441764320}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 15
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 7
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

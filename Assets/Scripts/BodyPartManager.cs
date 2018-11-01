@@ -15,15 +15,12 @@ public class BodyPartManager : MonoBehaviour {
 	void Start () {
 		GameObject[] penguinObjs = GameObject.FindGameObjectsWithTag("Penguin");
 		foreach(GameObject obj in penguinObjs) {
-			penguins.Add(obj);
+			penguins.Add(obj); 
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
 
-	}
-
+	//Assign a tracking id, from a newly found body
 	public void AssignPenguinIndex(ulong id) {
 		foreach(GameObject obj in penguins) {
 			Penguin tempPenguin = obj.GetComponent<Penguin>();
@@ -36,8 +33,11 @@ public class BodyPartManager : MonoBehaviour {
 		}
 	}
 
+	//Remove a penguin's tracking id, due to lost body
 	public void RemovePenguinIndex(ulong id) {
+		// Iterate over the penguin gameobjects
 		foreach(GameObject obj in penguins) {
+			//the penguin object from the penguin gameobject
 			Penguin tempPenguin = obj.GetComponent<Penguin>();
 			if(tempPenguin.trackingId == id) {
 				tempPenguin.trackingId = null;
@@ -47,6 +47,7 @@ public class BodyPartManager : MonoBehaviour {
 		}
 	}
 
+	//Get a part from the a specfic penguin, with the name and tracking id
 	public Transform GetPart(string jointName, ulong id) {
 		//The body transforms
 		Dictionary<ulong, Transform> tempTransforms = bodyView.GetTransforms();
