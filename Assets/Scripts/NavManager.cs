@@ -8,11 +8,13 @@ public class NavManager : MonoBehaviour {
 
 	BodyPartManager bodyPartManager;
 
-	NavMeshAgent agent;
+	public NavMeshAgent agent;
 
 	Penguin penguin;
 
 	public Transform goal;
+
+	Animator anim;
 
 	GameObject moveGoal;
 
@@ -27,17 +29,20 @@ public class NavManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(penguin.trackingId != null && moveGoal != null) {
+			//this.transform.LookAt(new Vector3(-Camera.main.transform.position.x, Camera.main.transform.position.y, -Camera.main.transform.position.z), Vector3.up);
+			this.transform.rotation = Quaternion.identity;
 			moveGoal.transform.position = bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position;
 			agent.destination = moveGoal.transform.position;
 		} else if(penguin.trackingId != null && moveGoal == null) {
 			moveGoal = new GameObject("Move Goal : " + penguin.trackingId);
 			return;
 		} else if(penguin.trackingId == null && moveGoal != null) {
-			moveGoal.transform.position = new Vector3(-31.2f, -2.380126f, 0);
+			moveGoal.transform.position = new Vector3(-49.38345f, -2.180126f, -27.5f);
 			agent.destination = moveGoal.transform.position;
+			this.transform.LookAt(new Vector3(-agent.destination.x, agent.destination.y, agent.destination.z), Vector3.up);
 			Destroy(moveGoal);
 			moveGoal = null;
-		}
+		}		
 	}
 
 	public void SetBaseOffset(float value) {

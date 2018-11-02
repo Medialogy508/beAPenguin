@@ -8,6 +8,8 @@ public class IKManager : MonoBehaviour {
 	Penguin penguin;
 
 	Animator anim;
+	
+	NavManager navManager;
 
     public float ikWeight = 1;
 
@@ -16,12 +18,13 @@ public class IKManager : MonoBehaviour {
 		bodyPartManager = GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>();
         anim = GetComponent<Animator>();
 		penguin = GetComponentInParent<Penguin>();
-
+		navManager = GetComponentInParent<NavManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		print(navManager.agent.velocity.magnitude);
+		anim.SetFloat("velocity", navManager.agent.velocity.magnitude);
 		
 	}
 
