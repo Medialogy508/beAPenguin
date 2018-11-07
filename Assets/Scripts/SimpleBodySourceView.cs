@@ -123,7 +123,7 @@ public class SimpleBodySourceView : MonoBehaviour
 
         bodyContainer.trackingId = id;
 
-        // I'm sorry Søren, but this works
+        // I'm sorry everybody, but this works
         bodyContainer.handLeft = new BodyPart("handLeft", body.transform.GetChild(0));
         bodyContainer.handRight = new BodyPart("handRight", body.transform.GetChild(1));
         bodyContainer.head = new BodyPart("head", body.transform.GetChild(2));

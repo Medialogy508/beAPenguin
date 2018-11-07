@@ -7,10 +7,7 @@ public class BodyContainer : MonoBehaviour {
 	public ulong trackingId;
 	public BodyPart handLeft, handRight, head, footLeft, footRight, crotch, shoulderLeft, shoulderRight;
 
-	public Vector3 leanVector;
-
 	public Dictionary<string, Transform> parts = new Dictionary<string, Transform>();
-	//public List<BodyPart> parts = new List<BodyPart>();
 
 	// Putting the parts into the dictionary
 	private void Start() {
