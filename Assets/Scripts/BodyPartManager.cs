@@ -73,7 +73,7 @@ public class BodyPartManager : MonoBehaviour {
 
 	public float GetHeadHeight(ulong id) {
 		try {
-			return GetPart("head", id).position.y;
+			return GetPart("head", id).position.y+2;
 		} catch (NullReferenceException e) {
 			Debug.LogError(e.Message);
 			return 0;

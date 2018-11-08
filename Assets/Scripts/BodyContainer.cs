@@ -17,7 +17,6 @@ public class BodyContainer : MonoBehaviour {
 		parts["footLeft"] = footLeft.transform;
 		parts["footRight"] = footRight.transform;
 		parts["spineBase"] = crotch.transform;
-		parts["spineMid"] = spineMid.transform;
 		parts["shoulderLeft"] = shoulderLeft.transform;
 		parts["shoulderRight"] = shoulderRight.transform;
 	}

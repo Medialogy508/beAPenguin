@@ -26,7 +26,6 @@ public class SimpleBodySourceView : MonoBehaviour {
        JointType.FootLeft,
        JointType.FootRight,
        JointType.SpineBase,
-       JointType.SpineMid,
        JointType.ShoulderLeft,
        JointType.ShoulderRight
     };
@@ -130,9 +129,8 @@ public class SimpleBodySourceView : MonoBehaviour {
         bodyContainer.footLeft = new BodyPart("footRight", body.transform.GetChild(3));
         bodyContainer.footRight = new BodyPart("footRight", body.transform.GetChild(4));
         bodyContainer.crotch = new BodyPart("spineBase", body.transform.GetChild(5));
-        bodyContainer.spineMid = new BodyPart("spineMid", body.transform.GetChild(6));
-        bodyContainer.shoulderLeft = new BodyPart("shoulderLeft", body.transform.GetChild(7));
-        bodyContainer.shoulderRight = new BodyPart("shoulderRight", body.transform.GetChild(8));
+        bodyContainer.shoulderLeft = new BodyPart("shoulderLeft", body.transform.GetChild(6));
+        bodyContainer.shoulderRight = new BodyPart("shoulderRight", body.transform.GetChild(7));
 
         return body;
     }

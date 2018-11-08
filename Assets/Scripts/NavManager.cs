@@ -31,8 +31,9 @@ public class NavManager : MonoBehaviour {
 		if(penguin.trackingId != null && moveGoal != null) {
 			//this.transform.LookAt(new Vector3(-Camera.main.transform.position.x, Camera.main.transform.position.y, -Camera.main.transform.position.z), Vector3.up);
 			this.transform.rotation = Quaternion.identity;
-			
-			moveGoal.transform.position = bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position;
+			float averageX = (bodyPartManager.GetPart("footLeft",(ulong) penguin.trackingId).position.x + bodyPartManager.GetPart("footRight",(ulong) penguin.trackingId).position.x)/2;
+			Vector3 newMoveGoalPos = new Vector3(averageX, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.y, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.z);
+			moveGoal.transform.position = newMoveGoalPos;
 			agent.destination = moveGoal.transform.position;
 		} else if(penguin.trackingId != null && moveGoal == null) {
 			moveGoal = new GameObject("Move Goal : " + penguin.trackingId);

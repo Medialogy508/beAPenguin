@@ -21,7 +21,6 @@ public class HeightManager : MonoBehaviour {
 		penguin = GetComponent<Penguin>();
 		bodyPartManager = GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>();
 		navManager = GetComponent<NavManager>();
-		
 	}
 	
 	// Update is called once per frame

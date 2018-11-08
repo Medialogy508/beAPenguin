@@ -23,7 +23,7 @@ public class IKManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print(navManager.agent.velocity.magnitude);
+		//print(navManager.agent.velocity.magnitude);
 		anim.SetFloat("velocity", navManager.agent.velocity.magnitude);
 		
 	}
