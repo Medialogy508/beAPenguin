@@ -42,8 +42,8 @@ public class IKManager : MonoBehaviour {
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
 			
-			/* 
-			float absShoulderX = Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.x) + Mathf.Abs(bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.x);
+			 
+			float absShoulderX = -Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.x) - Mathf.Abs(bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.x);
 			float absShoulderZ = Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z  - bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z);
 
 			float spineAngleRadians = Mathf.Atan(absShoulderX/absShoulderZ);
@@ -56,8 +56,8 @@ public class IKManager : MonoBehaviour {
 				spineAngle = 270 - (spineAngleRadians * (180.0f / Mathf.PI));
 			}
 
-			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.AngleAxis(-spineAngle, Vector3.up));
-			*/
+			anim.SetBoneLocalRotation(HumanBodyBones.Hips, Quaternion.AngleAxis(spineAngle, Vector3.up));
+			
 
 			// Leg weights
 			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/6);

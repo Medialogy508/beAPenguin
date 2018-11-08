@@ -31,6 +31,7 @@ public class NavManager : MonoBehaviour {
 		if(penguin.trackingId != null && moveGoal != null) {
 			//this.transform.LookAt(new Vector3(-Camera.main.transform.position.x, Camera.main.transform.position.y, -Camera.main.transform.position.z), Vector3.up);
 			this.transform.rotation = Quaternion.identity;
+			
 			moveGoal.transform.position = bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position;
 			agent.destination = moveGoal.transform.position;
 		} else if(penguin.trackingId != null && moveGoal == null) {

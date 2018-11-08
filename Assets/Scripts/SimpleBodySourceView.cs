@@ -6,8 +6,7 @@ using Joint = Windows.Kinect.Joint;
 
 //THIS IS FROM: https://www.youtube.com/watch?v=B7T0XTNk-Vg&index=2&list=PLmc6GPFDyfw-gF4aGw4Etgo0hJSWQcrYQ
 
-public class SimpleBodySourceView : MonoBehaviour
-{
+public class SimpleBodySourceView : MonoBehaviour {
 
     public float jointPositionScale = 10;
     public BodySourceManager mBodySourceManager;
@@ -27,6 +26,7 @@ public class SimpleBodySourceView : MonoBehaviour
        JointType.FootLeft,
        JointType.FootRight,
        JointType.SpineBase,
+       JointType.SpineMid,
        JointType.ShoulderLeft,
        JointType.ShoulderRight
     };
@@ -130,8 +130,9 @@ public class SimpleBodySourceView : MonoBehaviour
         bodyContainer.footLeft = new BodyPart("footRight", body.transform.GetChild(3));
         bodyContainer.footRight = new BodyPart("footRight", body.transform.GetChild(4));
         bodyContainer.crotch = new BodyPart("spineBase", body.transform.GetChild(5));
-        bodyContainer.shoulderLeft = new BodyPart("shoulderLeft", body.transform.GetChild(6));
-        bodyContainer.shoulderRight = new BodyPart("shoulderRight", body.transform.GetChild(7));
+        bodyContainer.spineMid = new BodyPart("spineMid", body.transform.GetChild(6));
+        bodyContainer.shoulderLeft = new BodyPart("shoulderLeft", body.transform.GetChild(7));
+        bodyContainer.shoulderRight = new BodyPart("shoulderRight", body.transform.GetChild(8));
 
         return body;
     }
@@ -162,6 +163,6 @@ public class SimpleBodySourceView : MonoBehaviour
     }
 
     private Vector3 GetVector3FromJoint(Joint joint) {
-        return new Vector3((joint.Position.X * jointPositionScale * 2f), (joint.Position.Y * jointPositionScale)+2, (joint.Position.Z * jointPositionScale) -45);
+        return new Vector3((joint.Position.X * jointPositionScale), (joint.Position.Y * jointPositionScale/2)-2, (joint.Position.Z * jointPositionScale) -45);
     }
 }
