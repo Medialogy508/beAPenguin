@@ -42,7 +42,7 @@ public class BodyPartManager : MonoBehaviour {
 			Penguin tempPenguin = obj.GetComponent<Penguin>();
 			if(tempPenguin.trackingId == id) {
 				tempPenguin.trackingId = null;
-				obj.GetComponent<HeightManager>().NullHeight();
+				//obj.GetComponent<HeightManager>().NullHeight();
 				obj.transform.name = "Penguin : " + "Nobody";
 				return;
 			}
