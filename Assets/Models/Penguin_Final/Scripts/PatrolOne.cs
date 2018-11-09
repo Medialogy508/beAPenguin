@@ -23,7 +23,6 @@ public class PatrolOne : MonoBehaviour {
 	}
 	
 	void Update () {
-        print(posIteration);    
         if (posIteration > Positions.Count)
         {
             posIteration = 0;
