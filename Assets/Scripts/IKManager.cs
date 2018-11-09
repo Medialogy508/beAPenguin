@@ -7,7 +7,7 @@ public class IKManager : MonoBehaviour {
 	BodyPartManager bodyPartManager;
 	Penguin penguin;
 
-	Animator anim;
+	public Animator anim;
 	
 	NavManager navManager;
 

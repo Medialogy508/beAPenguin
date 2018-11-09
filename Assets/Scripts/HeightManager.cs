@@ -12,9 +12,16 @@ public class HeightManager : MonoBehaviour {
 
 	public float? height = null;
 
+	public float heightDiffThresh;
+
+	float oldHeight = 100;
+	bool canJump = true;
+	bool jumping = false;
+
 	bool highEnough;
 
-	public GameObject childTrans, parentTrans;
+	public GameObject child, parent;
+
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +43,33 @@ public class HeightManager : MonoBehaviour {
 		}
 		if(penguin.trackingId != null) {
 			IsChild(highEnough);
+			GetHeightDifference();
+			if(jumping) {
+				//TODO SET BONE POSITION INSTEAD
+				child.transform.position = new Vector3(child.transform.position.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1f)-7f, child.transform.position.z);
+				parent.transform.position = new Vector3(parent.transform.position.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1f)-7f, parent.transform.position.z);
+			} else {
+				child.transform.localPosition = new Vector3(child.transform.localPosition.x, -0.12f, child.transform.localPosition.z);
+				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, -0.12f, parent.transform.localPosition.z);
+			}
 		}
+	}
+
+	public void GetHeightDifference() {
+		float newHeight = bodyPartManager.GetHeadHeight((ulong) penguin.trackingId);
+		if(oldHeight - newHeight < heightDiffThresh && canJump) {
+			canJump = false;
+			jumping = true;
+			print("Jump");
+			Invoke("CanJumpAgain", .5f);
+		}
+		
+		oldHeight = newHeight;
+	}
+
+	public void CanJumpAgain() {
+		jumping = false;
+		canJump = true;
 	}
 
 	public void GetABody() {
@@ -53,7 +86,7 @@ public class HeightManager : MonoBehaviour {
 	}
 
 	public void IsChild(bool isChild) {
-        childTrans.SetActive(!isChild);
-        parentTrans.SetActive(isChild);
+        child.SetActive(!isChild);
+        parent.SetActive(isChild);
     }
 }

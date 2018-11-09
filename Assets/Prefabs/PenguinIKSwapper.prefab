@@ -1272,7 +1272,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094489441764320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.22, y: -2.851, z: -2.3274572}
+  m_LocalPosition: {x: -0.6000004, y: -2.851, z: -1.7999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4498070728857918}
@@ -1662,6 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dbf209424d741dbb29e793c0f3beea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   ikWeight: 1
 --- !u!114 &114195108871254368
 MonoBehaviour:
@@ -1685,8 +1686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfef036f1daad461f9bed9c5a0c27ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childTrans: {fileID: 1903156630504624}
-  parentTrans: {fileID: 1789270519147662}
+  heightDiffThresh: -0.25
+  child: {fileID: 1903156630504624}
+  parent: {fileID: 1789270519147662}
 --- !u!114 &114934294603550516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1698,6 +1700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dbf209424d741dbb29e793c0f3beea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   ikWeight: 1
 --- !u!114 &114980494561551020
 MonoBehaviour:
@@ -1710,7 +1713,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f39dabe16bd4373ab26864deabddc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   goal: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!137 &137145579092380390
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

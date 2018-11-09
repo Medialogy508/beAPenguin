@@ -14,7 +14,7 @@ public class NavManager : MonoBehaviour {
 
 	public Transform goal;
 
-	Animator anim;
+	public Animator anim;
 
 	GameObject moveGoal;
 
