@@ -37,8 +37,8 @@ public class IKManager : MonoBehaviour {
 			
 			Vector3 spineRotationDir = bodyPartManager.GetPart("head", (ulong) penguin.trackingId).position - bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position;
 
-			spineRotationDir.x *= -1;
-			spineRotationDir.z *= -1;
+			spineRotationDir.x *= 1;
+			spineRotationDir.z *= 1;
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
 			
@@ -60,8 +60,8 @@ public class IKManager : MonoBehaviour {
 			
 
 			// Leg weights
-			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/6);
-			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/6);
+			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/8);
+			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/8);
 
 			// Arm goals
 			anim.SetIKPosition(AvatarIKGoal.LeftHand, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position);

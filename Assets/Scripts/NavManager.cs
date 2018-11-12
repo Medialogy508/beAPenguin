@@ -35,7 +35,7 @@ public class NavManager : MonoBehaviour {
 	void Update () {
 		if(penguin.trackingId != null && moveGoal != null) {
 			//Resetting rotation
-			this.transform.rotation = Quaternion.identity;
+			this.transform.rotation = Quaternion.Euler(-4.075f, 0, 0);
 			//Getting average x of feet and moving penguin to that
 			float averageX = (bodyPartManager.GetPart("footLeft",(ulong) penguin.trackingId).position.x + bodyPartManager.GetPart("footRight",(ulong) penguin.trackingId).position.x)/2;
 			Vector3 newMoveGoalPos = new Vector3(averageX, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.y, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.z);
@@ -47,8 +47,8 @@ public class NavManager : MonoBehaviour {
 			return;
 		} else if(penguin.trackingId == null && moveGoal != null) {
 			moveGoal.transform.position = new Vector3(-49.38345f, -2.180126f, -27.5f);
-			heightManager.child.transform.localPosition = new Vector3(heightManager.child.transform.localPosition.x, -0.12f, heightManager.child.transform.localPosition.z);
-			heightManager.parent.transform.localPosition = new Vector3(heightManager.parent.transform.localPosition.x, -0.12f, heightManager.parent.transform.localPosition.z);
+			heightManager.child.transform.localPosition = new Vector3(heightManager.child.transform.localPosition.x, -1.12f, heightManager.child.transform.localPosition.z);
+			heightManager.parent.transform.localPosition = new Vector3(heightManager.parent.transform.localPosition.x, -1.12f, heightManager.parent.transform.localPosition.z);
 			agent.destination = moveGoal.transform.position;
 			this.transform.LookAt(new Vector3(-agent.destination.x, agent.destination.y, agent.destination.z), Vector3.up);
 			Destroy(moveGoal);
