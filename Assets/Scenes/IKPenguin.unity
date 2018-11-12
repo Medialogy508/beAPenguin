@@ -4370,9 +4370,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371437540854542, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95156074042536182, guid: fb031aa988ce7744186fde49dd359af2,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e970f77d52d404042bae21c4ff62ae76, type: 2}
+    - target: {fileID: 1903156630504624, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445455320908234, guid: fb031aa988ce7744186fde49dd359af2,
+        type: 2}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 1335933377}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1335933377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1371437540854542, guid: fb031aa988ce7744186fde49dd359af2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1335933376}
 --- !u!1 &1339215153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1539770375662012, guid: c0a13742618afdb4cb2d9e33d51eac24,
