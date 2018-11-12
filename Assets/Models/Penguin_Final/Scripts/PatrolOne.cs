@@ -16,7 +16,6 @@ public class PatrolOne : MonoBehaviour {
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         Positions = new List<Vector3>();
-
         for (int i = 0; i < posHolder.childCount; i++){
             Positions.Add(posHolder.GetChild(i).position);
         }
