@@ -35,7 +35,7 @@ public class NavManager : MonoBehaviour {
 	void Update () {
 		if(penguin.trackingId != null && moveGoal != null) {
 			//Resetting rotation
-			this.transform.rotation = Quaternion.Euler(-4.075f, 0, 0);
+			this.transform.rotation = Quaternion.Euler(-8f, 0, 0);
 			//Getting average x of feet and moving penguin to that
 			float averageX = (bodyPartManager.GetPart("footLeft",(ulong) penguin.trackingId).position.x + bodyPartManager.GetPart("footRight",(ulong) penguin.trackingId).position.x)/2;
 			Vector3 newMoveGoalPos = new Vector3(averageX, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.y, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.z);

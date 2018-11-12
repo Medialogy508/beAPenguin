@@ -13,12 +13,15 @@ public class IKManager : MonoBehaviour {
 
     public float ikWeight = 1;
 
+	HeightManager heightManager;
+
     // Use this for initialization
     void Start () {
 		bodyPartManager = GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>();
         anim = GetComponent<Animator>();
 		penguin = GetComponentInParent<Penguin>();
 		navManager = GetComponentInParent<NavManager>();
+		heightManager = GetComponentInParent<HeightManager>();
 	}
 	
 	// Update is called once per frame
@@ -37,8 +40,17 @@ public class IKManager : MonoBehaviour {
 			
 			Vector3 spineRotationDir = bodyPartManager.GetPart("head", (ulong) penguin.trackingId).position - bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position;
 
-			spineRotationDir.x *= 1;
-			spineRotationDir.z *= 1;
+
+			if(heightManager.height != null) {
+			if (heightManager.height > bodyPartManager.GetChildHeight()) {
+				spineRotationDir.x *= -1;
+				spineRotationDir.z *= -1;
+			} else {
+				spineRotationDir.x *= 1;
+				spineRotationDir.z *= 1;
+			}
+		}
+			
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
 			
@@ -60,8 +72,8 @@ public class IKManager : MonoBehaviour {
 			
 
 			// Leg weights
-			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/8);
-			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/8);
+			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/4);
+			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/4);
 
 			// Arm goals
 			anim.SetIKPosition(AvatarIKGoal.LeftHand, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position);
