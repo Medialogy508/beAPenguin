@@ -42,30 +42,29 @@ public class IKManager : MonoBehaviour {
 
 
 			if(heightManager.height != null) {
-				if (heightManager.height > bodyPartManager.GetChildHeight()) {
-					spineRotationDir.x *= -1;
-					spineRotationDir.z *= -1;
-				} else {
-					spineRotationDir.x *= 1;
-					spineRotationDir.z *= 1;
-				}
+				spineRotationDir.x *= -1;
+				spineRotationDir.z *= -1;
 			}
 			
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
 			
+			float rotationDistanceMultiplier = (Mathf.Abs(bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position.x * 1f) + 1);
 			 
 			float absShoulderX = -Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.x) - Mathf.Abs(bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.x);
-			float absShoulderZ = Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z  - bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z);
+			float absShoulderZ = Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z  - bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z) * rotationDistanceMultiplier;
 
 			float spineAngleRadians = Mathf.Atan(absShoulderX/absShoulderZ);
 
 			float spineAngle;
 
+			
+			print(rotationDistanceMultiplier);
+
 			if(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z > bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z) {
-				spineAngle = 90 + (spineAngleRadians * (180.0f / Mathf.PI));
+				spineAngle = (90 + ((spineAngleRadians) * (180.0f / Mathf.PI)));
 			} else {
-				spineAngle = 270 - (spineAngleRadians * (180.0f / Mathf.PI));
+				spineAngle = (270 - ((spineAngleRadians) * (180.0f / Mathf.PI)));
 			}
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Hips, Quaternion.AngleAxis(spineAngle, Vector3.up));
