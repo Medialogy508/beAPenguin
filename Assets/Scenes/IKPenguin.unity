@@ -1002,7 +1002,7 @@ Prefab:
     - target: {fileID: 195524347490081282, guid: f8b6681ad32744e94a6658470f6c0662,
         type: 2}
       propertyPath: m_Speed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4759334454480766, guid: f8b6681ad32744e94a6658470f6c0662, type: 2}
       propertyPath: m_RootOrder
@@ -1990,6 +1990,21 @@ Prefab:
     - target: {fileID: 4759334454480766, guid: f8b6681ad32744e94a6658470f6c0662, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 195524347490081282, guid: f8b6681ad32744e94a6658470f6c0662,
+        type: 2}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497739084787134, guid: f8b6681ad32744e94a6658470f6c0662,
+        type: 2}
+      propertyPath: idlingTime.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497739084787134, guid: f8b6681ad32744e94a6658470f6c0662,
+        type: 2}
+      propertyPath: idlingTime.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b6681ad32744e94a6658470f6c0662, type: 2}
