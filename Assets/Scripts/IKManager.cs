@@ -75,6 +75,8 @@ public class IKManager : MonoBehaviour {
 			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/8);
 			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/8);
 
+
+			// TODO scale arm joints relative to average of feet.
 			// Arm goals
 			anim.SetIKPosition(AvatarIKGoal.LeftHand, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position);
 			anim.SetIKPosition(AvatarIKGoal.RightHand, bodyPartManager.GetPart("handLeft", (ulong) penguin.trackingId).position);
