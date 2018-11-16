@@ -42,30 +42,30 @@ public class IKManager : MonoBehaviour {
 
 
 			if(heightManager.height != null) {
-				if (heightManager.height > bodyPartManager.GetChildHeight()) {
-					spineRotationDir.x *= -1;
-					spineRotationDir.z *= -1;
-				} else {
-					spineRotationDir.x *= 1;
-					spineRotationDir.z *= 1;
-				}
+				spineRotationDir.x *= -1;
+				spineRotationDir.z *= -1;
 			}
 			
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
 			
+			// Mutliplier to scale rotation based on distance from center on x axis
+			float rotationDistanceMultiplier = (Mathf.Abs(bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position.x * 1f) + 1);
 			 
 			float absShoulderX = -Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.x) - Mathf.Abs(bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.x);
-			float absShoulderZ = Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z  - bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z);
+			float absShoulderZ = Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z  - bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z) * rotationDistanceMultiplier;
 
 			float spineAngleRadians = Mathf.Atan(absShoulderX/absShoulderZ);
 
 			float spineAngle;
 
+			
+			print(rotationDistanceMultiplier);
+
 			if(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z > bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z) {
-				spineAngle = 90 + (spineAngleRadians * (180.0f / Mathf.PI));
+				spineAngle = (90 + ((spineAngleRadians) * (180.0f / Mathf.PI)));
 			} else {
-				spineAngle = 270 - (spineAngleRadians * (180.0f / Mathf.PI));
+				spineAngle = (270 - ((spineAngleRadians) * (180.0f / Mathf.PI)));
 			}
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Hips, Quaternion.AngleAxis(spineAngle, Vector3.up));
@@ -75,6 +75,8 @@ public class IKManager : MonoBehaviour {
 			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/8);
 			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/8);
 
+
+			// TODO scale arm joints relative to average of feet.
 			// Arm goals
 			anim.SetIKPosition(AvatarIKGoal.LeftHand, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position);
 			anim.SetIKPosition(AvatarIKGoal.RightHand, bodyPartManager.GetPart("handLeft", (ulong) penguin.trackingId).position);

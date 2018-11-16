@@ -48,11 +48,11 @@ public class HeightManager : MonoBehaviour {
 			GetHeightDifference();
 			if(jumping) {
 				//TODO SET BONE POSITION INSTEAD
-				child.transform.localPosition = new Vector3(child.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1.1f) * 1f, child.transform.localPosition.z);
+				child.transform.localPosition = new Vector3(child.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1.5f + 2f) * 1f, child.transform.localPosition.z);
 				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1.1f) * 1f, parent.transform.localPosition.z);
 			} else {
-				child.transform.localPosition = new Vector3(child.transform.localPosition.x, + 2.5f, child.transform.localPosition.z);
-				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, + 2.40f, parent.transform.localPosition.z);
+				child.transform.localPosition = new Vector3(child.transform.localPosition.x, + 2.27f, child.transform.localPosition.z);
+				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, + 2.55f, parent.transform.localPosition.z);
 			}
 		}
 	}
