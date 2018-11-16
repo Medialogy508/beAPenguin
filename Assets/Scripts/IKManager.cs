@@ -49,6 +49,7 @@ public class IKManager : MonoBehaviour {
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
 			
+			// Mutliplier to scale rotation based on distance from center on x axis
 			float rotationDistanceMultiplier = (Mathf.Abs(bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position.x * 1f) + 1);
 			 
 			float absShoulderX = -Mathf.Abs(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.x) - Mathf.Abs(bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.x);
