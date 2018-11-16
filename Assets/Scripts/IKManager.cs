@@ -42,14 +42,14 @@ public class IKManager : MonoBehaviour {
 
 
 			if(heightManager.height != null) {
-			if (heightManager.height > bodyPartManager.GetChildHeight()) {
-				spineRotationDir.x *= -1;
-				spineRotationDir.z *= -1;
-			} else {
-				spineRotationDir.x *= 1;
-				spineRotationDir.z *= 1;
+				if (heightManager.height > bodyPartManager.GetChildHeight()) {
+					spineRotationDir.x *= -1;
+					spineRotationDir.z *= -1;
+				} else {
+					spineRotationDir.x *= 1;
+					spineRotationDir.z *= 1;
+				}
 			}
-		}
 			
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
@@ -72,8 +72,8 @@ public class IKManager : MonoBehaviour {
 			
 
 			// Leg weights
-			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/4);
-			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/4);
+			anim.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight/8);
+			anim.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight/8);
 
 			// Arm goals
 			anim.SetIKPosition(AvatarIKGoal.LeftHand, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position);

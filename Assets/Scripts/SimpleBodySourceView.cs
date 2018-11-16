@@ -161,6 +161,6 @@ public class SimpleBodySourceView : MonoBehaviour {
     }
 
     private Vector3 GetVector3FromJoint(Joint joint) {
-        return new Vector3((joint.Position.X * jointPositionScale), (joint.Position.Y * jointPositionScale/2) - 3f, (joint.Position.Z * jointPositionScale) -45);
+        return new Vector3((joint.Position.X * jointPositionScale), (joint.Position.Y * jointPositionScale) - 3f, (joint.Position.Z * jointPositionScale) -45);
     }
 }

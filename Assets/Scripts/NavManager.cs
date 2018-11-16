@@ -44,6 +44,8 @@ public class NavManager : MonoBehaviour {
             timeEngaged += Time.deltaTime;
 		} else if(penguin.trackingId != null && moveGoal == null) {
 			moveGoal = new GameObject("Move Goal : " + penguin.trackingId);
+			this.transform.position = new Vector3(bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position.x, -5, -45.6f);
+			moveGoal.transform.position = this.transform.position;
 			return;
 		} else if(penguin.trackingId == null && moveGoal != null) {
             if (agent.transform.position.x >= 0){
@@ -51,8 +53,8 @@ public class NavManager : MonoBehaviour {
             } else {
                 moveGoal.transform.position = new Vector3(-50f, 0f, -70f);
             }
-			heightManager.child.transform.localPosition = new Vector3(heightManager.child.transform.localPosition.x, -1.12f, heightManager.child.transform.localPosition.z);
-			heightManager.parent.transform.localPosition = new Vector3(heightManager.parent.transform.localPosition.x, -1.12f, heightManager.parent.transform.localPosition.z);
+			heightManager.child.transform.localPosition = new Vector3(heightManager.child.transform.localPosition.x, 2f, heightManager.child.transform.localPosition.z);
+			heightManager.parent.transform.localPosition = new Vector3(heightManager.parent.transform.localPosition.x, 2.40f, heightManager.parent.transform.localPosition.z);
 			agent.destination = moveGoal.transform.position;
             this.transform.LookAt(new Vector3(-agent.destination.x, agent.destination.y, -agent.destination.z), Vector3.up);
 			Destroy(moveGoal);
