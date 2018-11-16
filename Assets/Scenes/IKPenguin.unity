@@ -954,7 +954,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -24.193954
+      value: -18.1
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalPosition.y
@@ -962,23 +962,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -79.62181
+      value: -75.6
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.039481755
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.0451688
+      value: -0.021942703
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.87318474
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9989794
+      value: -0.4852917
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_RootOrder
@@ -986,7 +986,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 5.1780005
+      value: -2.739
       objectReference: {fileID: 0}
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalScale.x
@@ -999,6 +999,14 @@ Prefab:
     - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
       propertyPath: m_LocalScale.z
       value: 3.1740005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -4.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820317572778310, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -238.023
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91539656a2852a24894b1408b15af8fa, type: 2}
@@ -4546,14 +4554,6 @@ Prefab:
     - target: {fileID: 1094489441764320, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
       propertyPath: m_Name
       value: PenguinIKSwapper (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223020101216964, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1094489441764320, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
