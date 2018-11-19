@@ -46,8 +46,8 @@ public class HeightManager : MonoBehaviour {
 		if(penguin.trackingId != null) {
 			IsChild(highEnough);
 			GetHeightDifference();
+			// Jump trigger
 			if(jumping) {
-				//TODO SET BONE POSITION INSTEAD
 				child.transform.localPosition = new Vector3(child.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1.5f + 2f) * 1f, child.transform.localPosition.z);
 				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 1.1f) * 1f, parent.transform.localPosition.z);
 			} else {
