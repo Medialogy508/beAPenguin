@@ -37,18 +37,7 @@ public class IKManager : MonoBehaviour {
 			anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, ikWeight);
 			anim.SetIKPositionWeight(AvatarIKGoal.RightHand, ikWeight);
 
-			
-			Vector3 spineRotationDir = bodyPartManager.GetPart("head", (ulong) penguin.trackingId).position - bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position;
-
-
-			if(heightManager.height != null) {
-				spineRotationDir.x *= -1;
-				spineRotationDir.z *= -1;
-			}
-			
-
-			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Vector3.up, (spineRotationDir)));
-			
+			// Rotate body based on shoulder location
 			// Mutliplier to scale rotation based on distance from center on x axis
 			float rotationDistanceMultiplier = (Mathf.Abs(bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position.x * 1f) + 1);
 			 
@@ -59,8 +48,7 @@ public class IKManager : MonoBehaviour {
 
 			float spineAngle;
 
-			
-			print(rotationDistanceMultiplier);
+		
 
 			if(bodyPartManager.GetPart("shoulderLeft", (ulong) penguin.trackingId).position.z > bodyPartManager.GetPart("shoulderRight", (ulong) penguin.trackingId).position.z) {
 				spineAngle = (90 + ((spineAngleRadians) * (180.0f / Mathf.PI)));
@@ -69,6 +57,18 @@ public class IKManager : MonoBehaviour {
 			}
 
 			anim.SetBoneLocalRotation(HumanBodyBones.Hips, Quaternion.AngleAxis(spineAngle, Vector3.up));
+			
+			Vector3 spineRotationDir = bodyPartManager.GetPart("head", (ulong) penguin.trackingId).position - bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position;
+
+
+			if(heightManager.height != null) {
+				spineRotationDir.x *= -1;
+				spineRotationDir.z *= -1;
+			}
+			
+			Quaternion chestRot = anim.GetBoneTransform(HumanBodyBones.Chest).localRotation;
+
+			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(Quaternion.AngleAxis(spineAngle, Vector3.up).normalized.eulerAngles, (spineRotationDir)));
 			
 
 			// Leg weights
