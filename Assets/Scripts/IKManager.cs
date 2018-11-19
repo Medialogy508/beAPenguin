@@ -60,8 +60,7 @@ public class IKManager : MonoBehaviour {
 			
 			Vector3 spineRotationDir = bodyPartManager.GetPart("head", (ulong) penguin.trackingId).position - bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position;
 
-			spineRotationDir.x *= -1;
-			spineRotationDir.z *= -1;
+				
 			
 			Quaternion chestRot = anim.GetBoneTransform(HumanBodyBones.Chest).localRotation;
 
