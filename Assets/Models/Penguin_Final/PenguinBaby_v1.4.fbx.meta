@@ -58,11 +58,22 @@ ModelImporter:
     400050: mixamorig_Spine2
     400052: //RootNode
     2100000: Material.003
+    2100002: Mat
     4300000: BabyPenguin
     9500000: //RootNode
     13700000: BabyPenguin
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: 75c50981ee4eaa34a8c4eed7ec9cf18c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 735532d0c5b17074d9eb847e146b2950, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
