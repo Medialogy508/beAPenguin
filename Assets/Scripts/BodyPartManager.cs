@@ -73,7 +73,8 @@ public class BodyPartManager : MonoBehaviour {
 
 	public float GetHeadHeight(ulong id) {
 		try {
-			return GetPart("head", id).position.y+2;
+			print((Mathf.Abs(GetPart("spineBase", id).position.z + 34.98f) / 100));
+			return (GetPart("head", id).position.y+2) * (Mathf.Abs(GetPart("spineBase", id).position.z + 34.98f) / 100);
 		} catch (NullReferenceException e) {
 			Debug.LogError(e.Message);
 			return 0;
