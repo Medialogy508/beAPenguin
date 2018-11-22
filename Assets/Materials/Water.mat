@@ -72,7 +72,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DiffuseThresh: 1
-    - _DistortStrength: 0.6
+    - _DistortStrength: 2.75
     - _DstBlend: 0
     - _Foam: 0.94
     - _GlossMapScale: 1
