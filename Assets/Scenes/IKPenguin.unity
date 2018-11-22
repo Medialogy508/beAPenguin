@@ -3087,10 +3087,6 @@ Prefab:
       propertyPath: m_Name
       value: PenguinIKSwapper (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1205409273176614, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
   m_IsPrefabAsset: 0

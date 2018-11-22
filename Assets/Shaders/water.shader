@@ -114,7 +114,7 @@
                 o.scrPos = ComputeScreenPos(o.vertex); // grab position on screen
                 o.grabPos = ComputeGrabScreenPos(o.vertex);
                 float distort = tex2Dlod(_NoiseTex, float4(v.uv.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw,0,0)).yz * _DistortStrength;
-                o.grabPos.x -= 0.2;
+                o.grabPos.x -= _DistortStrength/3;
                 o.grabPos.xyz += distort;
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
