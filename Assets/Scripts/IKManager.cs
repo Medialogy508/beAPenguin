@@ -72,7 +72,7 @@ public class IKManager : MonoBehaviour {
 			
 			Quaternion spineRot = anim.GetBoneTransform(HumanBodyBones.Spine).localRotation;
 
-			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Lerp(spineRot, Quaternion.FromToRotation(new Vector3(0,1,0), (spineRotationDir)),Time.deltaTime*5));
+			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(new Vector3(0,1,0), (spineRotationDir)));
 			
 
 			// Leg weights
