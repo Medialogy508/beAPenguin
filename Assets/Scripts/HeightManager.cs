@@ -24,6 +24,8 @@ public class HeightManager : MonoBehaviour {
 
 	public GameObject child, parent;
 
+	public int jumpCount = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -72,6 +74,7 @@ public class HeightManager : MonoBehaviour {
 	public void CanJumpAgain() {
 		jumping = false;
 		canJump = true;
+		jumpCount++;
 	}
 
 	public void GetABody() {
