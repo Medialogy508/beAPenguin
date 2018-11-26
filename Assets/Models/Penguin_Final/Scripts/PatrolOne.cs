@@ -9,6 +9,8 @@ public class PatrolOne : MonoBehaviour {
     public Transform posHolder;
     int posIteration = 0;
     bool canMoveAgain = true;
+
+    public bool shouldMove = true;
     public Vector2 idlingTime;
     float velo;
     Animator animator;
@@ -17,6 +19,8 @@ public class PatrolOne : MonoBehaviour {
 
     void Start () {
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = Random.Range(0.5f, 4);
+
         animator = GetComponent<Animator>();
         Positions = new List<Vector3>();
         for (int i = 0; i < posHolder.childCount; i++){
@@ -47,6 +51,7 @@ public class PatrolOne : MonoBehaviour {
     }
 
     void patrolling(int index){
+        if(shouldMove)
             agent.destination = new Vector3(Positions[index].x, transform.position.y, Positions[index].z);
     }
 
@@ -55,7 +60,7 @@ public class PatrolOne : MonoBehaviour {
     }
 
     void idleOrNot(float veloTemp){
-        if(veloTemp < 1){
+        if(veloTemp < 0.1f || !shouldMove)  {
             animator.SetBool("idle",true);
         } else {
             animator.SetBool("idle", false);
