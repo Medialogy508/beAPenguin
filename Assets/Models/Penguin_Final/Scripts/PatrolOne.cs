@@ -55,7 +55,7 @@ public class PatrolOne : MonoBehaviour {
     }
 
     void idleOrNot(float veloTemp){
-        if(veloTemp < 2){
+        if(veloTemp < 1){
             animator.SetBool("idle",true);
         } else {
             animator.SetBool("idle", false);

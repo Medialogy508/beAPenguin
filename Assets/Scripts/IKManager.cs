@@ -15,6 +15,10 @@ public class IKManager : MonoBehaviour {
 
 	HeightManager heightManager;
 
+	float newSpineAngle = 0;
+
+	Vector3 leftArmPos = new Vector3(), rightArmPos = new Vector3(), leftLegPos = new Vector3(), rightLegPos = new Vector3();
+
     // Use this for initialization
     void Start () {
 		bodyPartManager = GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>();
@@ -55,15 +59,20 @@ public class IKManager : MonoBehaviour {
 				spineAngle = (270 - ((spineAngleRadians) * (180.0f / Mathf.PI)));
 			}
 
+			Quaternion hipsRot = anim.GetBoneTransform(HumanBodyBones.Hips).localRotation;
+
+			newSpineAngle = Mathf.Lerp(newSpineAngle, spineAngle, Time.deltaTime*10);
+
+			//anim.SetBoneLocalRotation(HumanBodyBones.Hips, Quaternion.AngleAxis(newSpineAngle, Vector3.up));
+
 			anim.SetBoneLocalRotation(HumanBodyBones.Hips, Quaternion.AngleAxis(spineAngle, Vector3.up));
 			
 			Vector3 spineRotationDir = bodyPartManager.GetPart("head", (ulong) penguin.trackingId).position - bodyPartManager.GetPart("spineBase", (ulong) penguin.trackingId).position;
 
 			
-			
-			Quaternion chestRot = anim.GetBoneTransform(HumanBodyBones.Chest).localRotation;
+			Quaternion spineRot = anim.GetBoneTransform(HumanBodyBones.Spine).localRotation;
 
-			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.FromToRotation(new Vector3(0,1,0), (spineRotationDir)));
+			anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Lerp(spineRot, Quaternion.FromToRotation(new Vector3(0,1,0), (spineRotationDir)),Time.deltaTime*5));
 			
 
 			// Leg weights
@@ -73,12 +82,20 @@ public class IKManager : MonoBehaviour {
 
 			// TODO scale arm joints relative to average of feet.
 			// Arm goals
-			anim.SetIKPosition(AvatarIKGoal.LeftHand, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position);
-			anim.SetIKPosition(AvatarIKGoal.RightHand, bodyPartManager.GetPart("handLeft", (ulong) penguin.trackingId).position);
+
+			leftArmPos = Vector3.Lerp(leftArmPos, bodyPartManager.GetPart("handRight", (ulong) penguin.trackingId).position, Time.deltaTime * 10);
+			rightArmPos = Vector3.Lerp(rightArmPos, bodyPartManager.GetPart("handLeft", (ulong) penguin.trackingId).position, Time.deltaTime * 10);
+
+			anim.SetIKPosition(AvatarIKGoal.LeftHand, leftArmPos);
+			anim.SetIKPosition(AvatarIKGoal.RightHand, rightArmPos);
+
+			
+			leftLegPos = Vector3.Lerp(leftLegPos, bodyPartManager.GetPart("footRight", (ulong) penguin.trackingId).position, Time.deltaTime * 10);
+			rightLegPos = Vector3.Lerp(rightLegPos, bodyPartManager.GetPart("footLeft", (ulong) penguin.trackingId).position, Time.deltaTime * 10);
 
 			// Leg goals
-			anim.SetIKPosition(AvatarIKGoal.LeftFoot, bodyPartManager.GetPart("footRight", (ulong) penguin.trackingId).position);
-			anim.SetIKPosition(AvatarIKGoal.RightFoot, bodyPartManager.GetPart("footLeft", (ulong) penguin.trackingId).position);
+			anim.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegPos);
+			anim.SetIKPosition(AvatarIKGoal.RightFoot, rightLegPos);
 		}
     }
 }

@@ -39,7 +39,9 @@ public class NavManager : MonoBehaviour {
 			//Getting average x of feet and moving penguin to that
 			float averageX = (bodyPartManager.GetPart("footLeft",(ulong) penguin.trackingId).position.x + bodyPartManager.GetPart("footRight",(ulong) penguin.trackingId).position.x)/2;
 			Vector3 newMoveGoalPos = new Vector3(averageX, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.y, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.z);
-			moveGoal.transform.position = newMoveGoalPos;
+			if(Vector3.Distance(moveGoal.transform.position, newMoveGoalPos) > 0.5f) {
+				moveGoal.transform.position = Vector3.Lerp(moveGoal.transform.position, newMoveGoalPos, Time.deltaTime*2);
+			}
 			agent.destination = moveGoal.transform.position;
             timeEngaged += Time.deltaTime;
 		} else if(penguin.trackingId != null && moveGoal == null) {
@@ -78,7 +80,7 @@ public class NavManager : MonoBehaviour {
 			File.AppendAllText("Statistic.txt",'"' + "1" + '"' + ",");
 		}
 
-		File.AppendAllText("Statistic.txt", '"' + timeEngaged.ToString() + '"');
+		File.AppendAllText("Statistic.txt", '"' + timeEngaged.ToString() + '"' + ",");
 
 		File.AppendAllText("Statistic.txt", '"' + heightManager.jumpCount.ToString() + '"' + Environment.NewLine);
 		timeEngaged = 0f;
