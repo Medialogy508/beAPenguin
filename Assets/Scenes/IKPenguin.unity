@@ -103,7 +103,7 @@ NavMeshSettings:
     agentRadius: 1
     agentHeight: 8
     agentSlope: 45
-    agentClimb: 1.1
+    agentClimb: 5.23
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 133801835}
   - component: {fileID: 133801834}
   - component: {fileID: 133801838}
+  - component: {fileID: 133801839}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1151,7 +1152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133801832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.41, y: 2.92, z: -59}
+  m_LocalPosition: {x: -0.39, y: 0.41, z: -51.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1617614782}
@@ -1216,7 +1217,7 @@ Camera:
   m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -1231,6 +1232,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1992f5b482304c42b1e8cdc96c79ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &133801839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133801832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: e6d5d4077b1c9564f9d64b69f37a4ef0, type: 2}
 --- !u!4 &147177394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 79bce83937e43d042843a359e671ca99,
@@ -10991,7 +11004,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1871829384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -56.4, y: 1.9000001, z: -84.4}
+  m_LocalPosition: {x: -46.81, y: 1.9000001, z: -86.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1054781602}
