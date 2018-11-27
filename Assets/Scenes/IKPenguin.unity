@@ -2500,9 +2500,9 @@ Terrain:
   m_TreeCrossFadeLength: 200
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 250
-  m_DetailObjectDensity: 1
+  m_DetailObjectDensity: 0.427
   m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
+  m_SplatMapDistance: 2000
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -3369,7 +3369,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483072992}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -12.4, y: -6.65, z: -27.8}
+  m_LocalPosition: {x: -17.55, y: -6.97, z: -32.91}
   m_LocalScale: {x: 6.77134, y: 0.6713144, z: 3.4232733}
   m_Children: []
   m_Father: {fileID: 1956111910}
