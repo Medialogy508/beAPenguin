@@ -67,7 +67,7 @@ public class HeightManager : MonoBehaviour {
 
 		oldHeights.Add(newHeight);
 
-		if(oldHeights.Capacity > 5) {
+		if(oldHeights.Capacity > 3) {
 			oldHeights.RemoveAt(0);
 		}
 		float heightSum = 0;
