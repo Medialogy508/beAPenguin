@@ -17,6 +17,9 @@ public class HeightManager : MonoBehaviour {
 	public float heightDiffThresh;
 
 	float oldHeight = 100;
+	
+	[SerializeField]
+	public List<float> oldHeights = new List<float>();
 	bool canJump = true;
 	bool jumping = false;
 
@@ -61,6 +64,21 @@ public class HeightManager : MonoBehaviour {
 
 	public void GetHeightDifference() {
 		float newHeight = bodyPartManager.GetHeadHeight((ulong) penguin.trackingId);
+
+		oldHeights.Add(newHeight);
+
+		if(oldHeights.Capacity > 5) {
+			oldHeights.RemoveAt(0);
+		}
+		float heightSum = 0;
+		foreach(float height in oldHeights) {
+			heightSum += height;
+		}
+
+		newHeight = heightSum/oldHeights.Capacity-1;
+
+		
+
 		if(oldHeight - newHeight < heightDiffThresh && canJump) {
 			canJump = false;
 			jumping = true;
