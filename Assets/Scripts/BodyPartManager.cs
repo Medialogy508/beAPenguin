@@ -73,7 +73,9 @@ public class BodyPartManager : MonoBehaviour {
 
 	public float GetHeadHeight(ulong id) {
 		try {
-			return (GetPart("head", id).position.y+2) + (Mathf.Abs(GetPart("spineBase", id).position.z + 34.98f) / 6);
+			float zValue = Vector3.Distance(GetPart("head", id).position, new Vector3(GetPart("head", id).position.x, GetPart("head", id).position.y, Camera.main.transform.position.z));
+			//print("Distance to camera Z: " + zValue/10);
+			return (GetPart("head", id).position.y+4) + zValue/60;
 		} catch (NullReferenceException e) {
 			Debug.LogError(e.Message);
 			return 0;

@@ -53,11 +53,11 @@ public class HeightManager : MonoBehaviour {
 			GetHeightDifference();
 			// Jump trigger
 			if(jumping) {
-				child.transform.localPosition = new Vector3(child.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 0.65f + 2f) * 1f, child.transform.localPosition.z);
-				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 0.55f) * 1f, parent.transform.localPosition.z);
-			} else {
-				child.transform.localPosition = new Vector3(child.transform.localPosition.x, + 2.27f, child.transform.localPosition.z);
-				parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, + 1.79f, parent.transform.localPosition.z);
+				jumping = false;
+				
+				//parent.transform.localPosition = new Vector3(parent.transform.localPosition.x, (bodyPartManager.GetHeadHeight((ulong) penguin.trackingId) * 0.55f) * 1f, parent.transform.localPosition.z);
+				child.GetComponent<Animator>().SetTrigger("Jump");
+				parent.GetComponent<Animator>().SetTrigger("Jump");
 			}
 		}
 	}

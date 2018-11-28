@@ -6939,10 +6939,6 @@ Prefab:
       propertyPath: m_Name
       value: PenguinIKSwapper (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1094489441764320, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
   m_IsPrefabAsset: 0
@@ -9061,11 +9057,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1308974021}
     m_Modifications:
-    - target: {fileID: 114445455320908234, guid: fb031aa988ce7744186fde49dd359af2,
-        type: 2}
-      propertyPath: oldHeights.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4515677637305350, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.6000004
@@ -10017,7 +10008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyView: {fileID: 247200665}
-  childHeight: 2.5
+  childHeight: 4
 --- !u!4 &1632849118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 53414ab72ac45614684af7a6985b2c85,

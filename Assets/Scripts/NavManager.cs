@@ -55,8 +55,8 @@ public class NavManager : MonoBehaviour {
             } else {
                 moveGoal.transform.position = new Vector3(-50f, 0f, -70f);
             }
-			heightManager.child.transform.localPosition = new Vector3(heightManager.child.transform.localPosition.x, 2.27f, heightManager.child.transform.localPosition.z);
-			heightManager.parent.transform.localPosition = new Vector3(heightManager.parent.transform.localPosition.x, 1.79f, heightManager.parent.transform.localPosition.z);
+			heightManager.child.transform.localPosition = new Vector3(heightManager.child.transform.localPosition.x, 2.76f, heightManager.child.transform.localPosition.z);
+			heightManager.parent.transform.localPosition = new Vector3(heightManager.parent.transform.localPosition.x, 2f, heightManager.parent.transform.localPosition.z);
 			agent.destination = moveGoal.transform.position;
             this.transform.LookAt(new Vector3(agent.destination.x, agent.destination.y, agent.destination.z), Vector3.up);
 			Destroy(moveGoal);

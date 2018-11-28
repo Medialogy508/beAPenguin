@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 8e8a0f5d5016e404cb74803296b2aef0
+guid: 4deed324c13a7b445a9a6b5dbc3d54f8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: BabyPenguin
+    100000: Cylinder
     100002: mixamorig_Head
     100004: mixamorig_HeadTop_End
     100006: mixamorig_Hips
@@ -30,7 +30,7 @@ ModelImporter:
     100048: mixamorig_Spine1
     100050: mixamorig_Spine2
     100052: //RootNode
-    400000: BabyPenguin
+    400000: Cylinder
     400002: mixamorig_Head
     400004: mixamorig_HeadTop_End
     400006: mixamorig_Hips
@@ -57,23 +57,13 @@ ModelImporter:
     400048: mixamorig_Spine1
     400050: mixamorig_Spine2
     400052: //RootNode
-    2100000: Material.003
-    2100002: Mat
-    4300000: BabyPenguin
+    2100000: No Name
+    4300000: Cylinder
+    7400000: Jump
     9500000: //RootNode
-    13700000: BabyPenguin
+    13700000: Cylinder
     2186277476908879412: ImportLogs
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat
-    second: {fileID: 2100000, guid: 75c50981ee4eaa34a8c4eed7ec9cf18c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 735532d0c5b17074d9eb847e146b2950, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -88,12 +78,12 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'mixamorig_LeftUpLeg'
-      : position error = 41.972424 mm\n\t'mixamorig_LeftLeg' : position error = 11.746183
-      mm\n\t'mixamorig_LeftFoot' : position error = 1.510749 mm\n\t'mixamorig_LeftToeBase'
-      : position error = 6.437811 mm\n\t'mixamorig_RightUpLeg' : position error =
-      62.694439 mm\n\t'mixamorig_RightLeg' : position error = 2.773962 mm\n\t'mixamorig_RightFoot'
-      : position error = 1.103108 mm\n\t'mixamorig_RightToeBase' : position error
-      = 5.331766 mm\n"
+      : position error = 40.910099 mm\n\t'mixamorig_LeftLeg' : position error = 35.332760
+      mm\n\t'mixamorig_LeftFoot' : position error = 9.815537 mm\n\t'mixamorig_LeftToeBase'
+      : position error = 51.499432 mm\n\t'mixamorig_RightUpLeg' : position error =
+      40.905823 mm\n\t'mixamorig_RightLeg' : position error = 35.336365 mm\n\t'mixamorig_RightFoot'
+      : position error = 9.810910 mm\n\t'mixamorig_RightToeBase' : position error
+      = 51.104313 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -107,7 +97,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Jump
+      takeName: CINEMA_4D_Main
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

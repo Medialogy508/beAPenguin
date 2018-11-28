@@ -2329,7 +2329,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493366459547088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.27, z: 0}
+  m_LocalPosition: {x: 0, y: 2.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4830912524068278}
@@ -3519,7 +3519,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873434118348468}
   m_LocalRotation: {x: -0.02499861, y: 0.012824797, z: 0.015399205, w: 0.9994866}
-  m_LocalPosition: {x: -0.01, y: 1.79, z: -0.29}
+  m_LocalPosition: {x: -0.01, y: 2, z: -0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4865165723354458}
@@ -3693,7 +3693,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e970f77d52d404042bae21c4ff62ae76, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -3743,11 +3743,11 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493366459547088}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 5f551b6b95bfd584b89c58ffbe178d89, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 4925c453229d11148bc788b67a5ab039, type: 3}
   m_Controller: {fileID: 9100000, guid: e970f77d52d404042bae21c4ff62ae76, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -3801,7 +3801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfef036f1daad461f9bed9c5a0c27ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightDiffThresh: -0.3
+  heightDiffThresh: -0.15
   oldHeights:
   - 0
   - 0
