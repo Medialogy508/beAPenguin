@@ -77,13 +77,14 @@ public class HeightManager : MonoBehaviour {
 
 		newHeight = heightSum/oldHeights.Capacity-1;
 
-		
+        print(newHeight);
 
 		if(oldHeight - newHeight < heightDiffThresh && canJump) {
 			canJump = false;
 			jumping = true;
 			print("Jump");
-			Invoke("CanJumpAgain", .5f);
+            jumpCount++;
+            Invoke("CanJumpAgain", .5f);
 		}
 		
 		oldHeight = newHeight;
@@ -92,7 +93,7 @@ public class HeightManager : MonoBehaviour {
 	public void CanJumpAgain() {
 		jumping = false;
 		canJump = true;
-		jumpCount++;
+		
 	}
 
 	public void GetABody() {
