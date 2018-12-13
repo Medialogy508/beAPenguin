@@ -6,19 +6,23 @@ using UnityEngine.Video;
 
 public class AV_cameraScript : MonoBehaviour {
 
+	[Range(0, 150)]
+	public float openMouthThreshold;
+
+	[Range(1, 15)]
+	public float openMouthSpeed;
+
+	float[] mouthFloats = new float[6];
+
 	public List<Camera> cameras = new List<Camera>();
 	VideoPlayer videoPlayer;
 	const int QSAMPLES = 128;
-		const float REFVAL = 0.1f;  // RMS for 0 dB
+	const float REFVAL = 0.1f;  // RMS for 0 dB
 
 	// Use this for initialization
 	void Start () {
 		videoPlayer = gameObject.GetComponent<VideoPlayer>();
 		videoPlayer.Play();
-
-		
- 
-		
 	}
 
 	float GetAudioDb() {
@@ -37,21 +41,24 @@ public class AV_cameraScript : MonoBehaviour {
 		float dbv = 20.0f*Mathf.Log10(rms/REFVAL);
 		
 
-		return ((dbv + 40)/60) * 100;
+		return ((dbv + 40)/50) * 100;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if(GetAudioDb() > 37f) {
+		int index = 0;
+		if(GetAudioDb() > openMouthThreshold) {
+			
 			foreach (var penguin in GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>().GetAllPenguins()) {
-				penguin.GetComponent<HeightManager>().parent.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, GetAudioDb());
-          		
+				mouthFloats[index] = Mathf.Lerp(mouthFloats[index], GetAudioDb(), Time.deltaTime * openMouthSpeed);
+				penguin.GetComponent<HeightManager>().parent.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0,mouthFloats[index]);
+          		index++;
 			}
 		} else {
 			foreach (var penguin in GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>().GetAllPenguins()) {
-				penguin.GetComponent<HeightManager>().parent.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, 0);
-          		
+				mouthFloats[index] = Mathf.Lerp(mouthFloats[index], 0, Time.deltaTime * openMouthSpeed);
+				penguin.GetComponent<HeightManager>().parent.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, mouthFloats[index]);
+          		index++;
 			}
 		}
 		
