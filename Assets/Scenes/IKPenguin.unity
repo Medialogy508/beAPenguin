@@ -14320,7 +14320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openMouthThreshold: 106.1
-  openMouthSpeed: 1.75
+  openMouthSpeed: 6.08
   cameras:
   - {fileID: 68638784}
   - {fileID: 133801837}
