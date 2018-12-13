@@ -78,7 +78,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 1
+    - _Height: 0.496
     - _Metallic: 0
     - _Mode: 0
     - _NormalMapDepth: 2.6
@@ -104,3 +104,6 @@ Material:
     - _FoamColor: {r: 0.7126202, g: 0.9230345, b: 0.9622642, a: 0.15686275}
     - _SpecColor: {r: 1, g: 0.9669811, b: 0.9669811, a: 1}
     - _Tint: {r: 0.7688679, g: 0.8613208, b: 1, a: 1}
+    - _WaveA: {r: 1, g: 5, b: 5, a: 15}
+    - _WaveB: {r: 0, g: 5, b: 5, a: 15}
+    - _WaveC: {r: 0, g: 5, b: 5, a: 15}

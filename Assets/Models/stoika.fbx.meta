@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 13a94b353cb91734da37ac5f9566d4a6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: AI47_008_obj_1585
+    100002: AI47_008_obj_1586
+    100004: AI47_008_obj_1587
+    100006: AI47_008_obj_1588
+    100008: AI47_008_obj_1589
+    100010: AI47_008_obj_1590
+    100012: AI47_008_obj_1593
+    100014: AI47_008_obj_1594
+    100016: AI47_008_obj_1606
+    100018: AI47_008_obj_1607
+    100020: Cap_1
+    100022: Cap_2
+    100024: Cylinder
+    100026: Cylinder_1
+    100028: MICRO_PHONE
+    100030: Plane
+    100032: //RootNode
+    100034: Sweep
+    400000: AI47_008_obj_1585
+    400002: AI47_008_obj_1586
+    400004: AI47_008_obj_1587
+    400006: AI47_008_obj_1588
+    400008: AI47_008_obj_1589
+    400010: AI47_008_obj_1590
+    400012: AI47_008_obj_1593
+    400014: AI47_008_obj_1594
+    400016: AI47_008_obj_1606
+    400018: AI47_008_obj_1607
+    400020: Cap_1
+    400022: Cap_2
+    400024: Cylinder
+    400026: Cylinder_1
+    400028: MICRO_PHONE
+    400030: Plane
+    400032: //RootNode
+    400034: Sweep
+    2100000: Mat.1
+    2100002: Mat
+    2100004: No Name
+    2300000: AI47_008_obj_1585
+    2300002: AI47_008_obj_1586
+    2300004: AI47_008_obj_1587
+    2300006: AI47_008_obj_1588
+    2300008: AI47_008_obj_1589
+    2300010: AI47_008_obj_1590
+    2300012: AI47_008_obj_1593
+    2300014: AI47_008_obj_1594
+    2300016: AI47_008_obj_1606
+    2300018: AI47_008_obj_1607
+    2300020: Cap_1
+    2300022: Cap_2
+    2300024: Cylinder
+    2300026: Cylinder_1
+    2300028: Plane
+    2300030: Sweep
+    3300000: AI47_008_obj_1585
+    3300002: AI47_008_obj_1586
+    3300004: AI47_008_obj_1587
+    3300006: AI47_008_obj_1588
+    3300008: AI47_008_obj_1589
+    3300010: AI47_008_obj_1590
+    3300012: AI47_008_obj_1593
+    3300014: AI47_008_obj_1594
+    3300016: AI47_008_obj_1606
+    3300018: AI47_008_obj_1607
+    3300020: Cap_1
+    3300022: Cap_2
+    3300024: Cylinder
+    3300026: Cylinder_1
+    3300028: Plane
+    3300030: Sweep
+    4300000: Sweep
+    4300002: Cap_1
+    4300004: Cap_2
+    4300006: Cylinder_1
+    4300008: Cylinder
+    4300010: Plane
+    4300012: AI47_008_obj_1585
+    4300014: AI47_008_obj_1586
+    4300016: AI47_008_obj_1587
+    4300018: AI47_008_obj_1588
+    4300020: AI47_008_obj_1589
+    4300022: AI47_008_obj_1590
+    4300024: AI47_008_obj_1593
+    4300026: AI47_008_obj_1594
+    4300028: AI47_008_obj_1606
+    4300030: AI47_008_obj_1607
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10.9
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

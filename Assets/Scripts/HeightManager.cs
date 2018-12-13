@@ -77,8 +77,6 @@ public class HeightManager : MonoBehaviour {
 
 		newHeight = heightSum/oldHeights.Capacity-1;
 
-        print(newHeight);
-
 		if(oldHeight - newHeight < heightDiffThresh && canJump) {
 			canJump = false;
 			jumping = true;

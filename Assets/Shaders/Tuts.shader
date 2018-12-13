@@ -21,6 +21,7 @@
 			CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma addshadows
            
             #include "UnityCG.cginc"
  

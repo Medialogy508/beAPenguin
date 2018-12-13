@@ -29,6 +29,7 @@ public class NavManager : MonoBehaviour {
 		bodyPartManager = GameObject.FindGameObjectWithTag("BodyPartManager").GetComponent<BodyPartManager>();
 		agent = GetComponent<NavMeshAgent>();
 		heightManager = GetComponent<HeightManager>();
+		
 	}
 	
 	// Update is called once per frame
@@ -40,9 +41,10 @@ public class NavManager : MonoBehaviour {
 			float averageX = (bodyPartManager.GetPart("footLeft",(ulong) penguin.trackingId).position.x + bodyPartManager.GetPart("footRight",(ulong) penguin.trackingId).position.x)/2;
 			Vector3 newMoveGoalPos = new Vector3(averageX, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.y, bodyPartManager.GetPart("spineBase",(ulong) penguin.trackingId).position.z);
 			if(Vector3.Distance(moveGoal.transform.position, newMoveGoalPos) > 0.5f) {
-				moveGoal.transform.position = Vector3.Lerp(moveGoal.transform.position, newMoveGoalPos, Time.deltaTime*2);
+				moveGoal.transform.position = Vector3.Slerp(moveGoal.transform.position, newMoveGoalPos, Time.deltaTime*2);
+				agent.destination = moveGoal.transform.position;
 			}
-			agent.destination = moveGoal.transform.position;
+			
             timeEngaged += Time.deltaTime;
 		} else if(penguin.trackingId != null && moveGoal == null) {
 			moveGoal = new GameObject("Move Goal : " + penguin.trackingId);
