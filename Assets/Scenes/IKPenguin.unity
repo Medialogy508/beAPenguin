@@ -10374,6 +10374,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1308974021}
     m_Modifications:
+    - target: {fileID: 137529530087497006, guid: fb031aa988ce7744186fde49dd359af2,
+        type: 2}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4515677637305350, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.6000004
@@ -10409,6 +10414,15 @@ Prefab:
     - target: {fileID: 1094489441764320, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
       propertyPath: m_Name
       value: PenguinIKSwapper (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866438892862188, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137529530087497006, guid: fb031aa988ce7744186fde49dd359af2,
+        type: 2}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb031aa988ce7744186fde49dd359af2, type: 2}
