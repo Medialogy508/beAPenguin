@@ -82,6 +82,10 @@ public class BodyPartManager : MonoBehaviour {
 		}
 	}
 
+	public List<GameObject> GetAllPenguins() {
+		return penguins;
+	}
+
 	public float GetChildHeight() {
 		return childHeight;
 	}
